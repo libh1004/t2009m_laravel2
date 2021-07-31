@@ -2,6 +2,16 @@
 @extends("layout")
 @section("main")
 
+    <div class="card-content">
+        <?php $message = Session::get("message_success")?>
+        @if($message)
+            <div class="alert alert-success col-sm-6">{{$message}}</div>
+        @endif
+        <?php Session::put("message_success","")?>
+    </div>
+
+
+    ?>
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -22,56 +32,19 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-6">
-                    <form action="{{url("admin/students/save")}}" method="post">
+                    <form action="{{url("admin/students/save-feedback")}}" method="post">
                         @csrf
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control" value="{{old("name")}}"/>
-                            @error("name")
-                            <p class="text-danger">{{$message}}</p>
-                            @enderror
-                        </div>
-                        <div>
-                            <label>Price</label>
-                            <input type="number" name="price" class="form-control" value="{{old("price")}}"/>
-                            @error("price")
-                            <p class="text-danger">{{$message}}</p>
-                            @enderror
-                        </div>
-                        {{--                        <div>--}}
-                        {{--                            <label>Image</label>--}}
-                        {{--                            <input type="file" name="image" class="form-control" value="{{old("image")}}"/>--}}
-                        {{--                            @error("price")--}}
-                        {{--                            <p class="text-danger">{{$message}}</p>--}}
-                        {{--                            @enderror--}}
-                        {{--                        </div>--}}
-                        <div>
-                            <label>Qty</label>
-                            <input type="number" name="qty" class="form-control" value="{{old("qty")}}"/>
-                            @error("qty")
-                            <p class="text-danger">{{$message}}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label class="text-capitalize">Category</label>
-                            <select name="category_id" class="form-control">
-                                <option value="0">Select a category</option>
-                                @foreach($categories as $item)
-                                    <option @if(old("category_id") == $item->id)  selected @endif value="{{$item->id}}">{{$item->name}}</option>
-                                @endforeach
-                            </select>
-                            @error("category_id")
-                            <p class="text-danger">{{$message}}</p>
-                            @enderror
-                        </div>
-                        <div>
-                            <label>Description</label>
-                            <input type="text" name="description" class="form-control" value="{{old("description")}}"/>
-                        </div>
+                        <textarea  style="overflow:hidden;width:-webkit-fill-available"
+                            name="feedback"
+                            required
+                            value={{old("feedback")}}
+                            class="form-control"
+                        ></textarea>
+                        <div></div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
+
                     </form>
                 </div>
             </div>

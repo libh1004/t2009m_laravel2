@@ -38,13 +38,13 @@
                                 <td>{{formatDate($student->created_at)}}</td>
                                 <td>{{formatDate($student->updated_at)}}</td>
                                 <td>
-                                    <a href="{{url("/students/feedback".$student->student_id)}}">Feedback</a>
+                                    <a href="{{url("admin/students/feedback/".$student->student_id)}}">Feedback</a>
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    {{--                    {!! $products->appends(request()->input())->links("vendor.pagination.default") !!}--}}
+                                        {!! $students->appends(request()->input())->links("vendor.pagination.default") !!}
                 </div>
             </div>
         </div>
