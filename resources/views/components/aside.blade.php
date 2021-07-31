@@ -74,9 +74,9 @@
 {{--                </li>--}}
 
                     <li class="nav-item">
-                        <a href="{{ url("admin/students") }}" class="nav-link">
+                        <a href="{{ url("admin/feedbacks") }}" class="nav-link">
                             <i class="nav-icon far fa-circle text-warning"></i>
-                            <p>Student</p>
+                            <p>Feedback</p>
                         </a>
                     </li>
             </ul>

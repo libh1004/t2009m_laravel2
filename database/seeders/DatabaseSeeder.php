@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Book;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Feedback;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
 use App\Models\Student;
@@ -23,7 +24,7 @@ class DatabaseSeeder extends Seeder
 //        Product::factory(1000)->create();
 //        Brand::factory(50)->create();
 //        Book::factory(50)->create();
-          Student::factory(200)->create();
+          Feedback::factory(200)->create();
 
     }
 }

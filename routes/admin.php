@@ -6,7 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\FeedbackController;
 
 // phai login moi di duoc vao cac trang sau
 Route::middleware(["auth","admin"])->group(function(){
@@ -44,9 +44,9 @@ Route::middleware(["auth","admin"])->group(function(){
 //    Route::post("/books/save-book",[BookController::class,"save_book"]);
 
     // Student
-    Route::get("/students",[StudentController::class,"list_student"]);
-    Route::get("/students/feedback/{student_id}",[StudentController::class,"feed_back"]);
-    Route::post("/students/save-feedback",[StudentController::class,"save_feedback"]);
+    Route::get("/feedbacks",[FeedbackController::class,"list_feedback"]);
+    Route::get("/feedbacks/form-feedback",[FeedbackController::class,"form_feedback"]);
+    Route::post("/feedbacks/save-feedback",[FeedbackController::class,"save_feedback"]);
 
 
 });

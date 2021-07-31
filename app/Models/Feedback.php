@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class Feedback extends Model
 {
     use HasFactory;
-    protected $table = "students";
-    protected $primaryKey = "student_id";
+    protected $table = "feedbacks";
+    protected $primaryKey = "feedback_id";
     protected $fillable = [
         "student_name",
         "student_email",
@@ -17,6 +17,4 @@ class Student extends Model
         "feedback"
 
     ];
-
-
 }

@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Student;
+use App\Models\Feedback;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class StudentFactory extends Factory
+class FeedbackFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Student::class;
+    protected $model = Feedback::class;
 
     /**
      * Define the model's default state.
@@ -25,8 +25,7 @@ class StudentFactory extends Factory
             "student_name"=>$this->faker->name(),
             "student_email"=>$this->faker->unique()->email,
             "student_telephone"=>$this->faker->unique()->phoneNumber,
-            "feedback"=>""
+            "feedback"=>$this->faker->text
         ];
-
     }
 }
