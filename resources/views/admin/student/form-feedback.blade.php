@@ -9,8 +9,6 @@
         @endif
         <?php Session::put("message_success","")?>
     </div>
-
-
     ?>
     <div class="content-header">
         <div class="container-fluid">
