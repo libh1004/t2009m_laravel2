@@ -73,6 +73,13 @@
 {{--                    </a>--}}
 {{--                </li>--}}
 
+
+                    <li class="nav-item">
+                        <a href="{{ url("admin/students") }}" class="nav-link">
+                            <i class="nav-icon far fa-circle text-warning"></i>
+                            <p>Student</p>
+                        </a>
+                    </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

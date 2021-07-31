@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\StudentController;
 
 // phai login moi di duoc vao cac trang sau
 Route::middleware(["auth","admin"])->group(function(){
@@ -41,6 +42,10 @@ Route::middleware(["auth","admin"])->group(function(){
     Route::get("/books",[BookController::class,"list_book"]);
     Route::get("/books/create-book",[BookController::class,"create_book"]);
     Route::post("/books/save-book",[BookController::class,"save_book"]);
+
+    // Student
+    Route::get("/students",[StudentController::class,"list_student"]);
+    Route::get("/students/feedback/{student_id}",[StudentController::class,"feed_back"]);
 });
 
 // request -> routing |middleware|-> controller
