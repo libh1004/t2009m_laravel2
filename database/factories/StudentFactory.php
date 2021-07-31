@@ -25,7 +25,7 @@ class StudentFactory extends Factory
             "student_name"=>$this->faker->name(),
             "student_email"=>$this->faker->unique()->email,
             "student_telephone"=>$this->faker->unique()->phoneNumber,
-            "feedback"=>" "
+            "feedback"=>""
         ];
 
     }

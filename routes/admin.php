@@ -48,6 +48,7 @@ Route::middleware(["auth","admin"])->group(function(){
     Route::get("/students/feedback/{student_id}",[StudentController::class,"feed_back"]);
     Route::post("/students/save-feedback",[StudentController::class,"save_feedback"]);
 
+
 });
 
 // request -> routing |middleware|-> controller

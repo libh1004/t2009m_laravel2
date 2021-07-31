@@ -15,6 +15,7 @@ class Student extends Model
         "student_email",
         "student_telephone",
         "feedback"
+
     ];
 
 

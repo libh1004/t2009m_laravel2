@@ -25,14 +25,9 @@ class StudentController extends Controller
 
     public function save_feedback(Request $request){
         try{
-            $data = array();
-            $data = [
-                "student_name" => $request->get("student_name"),
-                "student_email" => $request->get("student_email"),
-                "student_telephone" => $request->get("student_telephone"),
-                "feedback" => $request->get("feedback")
-            ];
-            Student::create($data);
+            Student::create([
+                "feedback"=>$request->get("feedback")
+            ]);
             Session::put("message_success","Create feedback successfully");
             return redirect()->to("admin/students");
         }catch (\Exception $e){}

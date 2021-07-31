@@ -40,7 +40,6 @@
                                 <td>
                                     <a href="{{url("admin/students/feedback/".$student->student_id)}}">Feedback</a>
                                 </td>
-
                             </tr>
                         @endforeach
                         </tbody>
